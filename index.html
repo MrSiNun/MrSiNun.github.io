@@ -2,11 +2,1041 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta http-equiv="refresh" content="0; url=./portfolio/" />
-  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070a12" />
+  <meta name="description" content="Sinan Bilir — Machine Learning Engineer (NLP & Generative AI) | Production-Grade AI Systems | MLOps & Cloud Automation" />
+  <title>Sinan Bilir | Personal Portfolio</title>
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.09);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --faint:rgba(255,255,255,.55);
+      --line:rgba(255,255,255,.14);
+      --shadow:0 18px 55px rgba(0,0,0,.50);
+      --radius:18px;
+      --radius2:26px;
+      --max:1180px;
+      --accent:#7aa7ff;
+      --accent2:#8dffd7;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --bggrad:
+        radial-gradient(1200px 600px at 10% -10%, rgba(122,167,255,.22), transparent 60%),
+        radial-gradient(1000px 700px at 95% 5%, rgba(141,255,215,.14), transparent 58%),
+        radial-gradient(850px 620px at 55% 110%, rgba(122,167,255,.10), transparent 55%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background: var(--bg);
+      background-image: var(--bggrad);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{text-decoration:underline; text-underline-offset:3px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 90px}
+
+    .nav{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(12px);
+      background: rgba(7,10,18,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:320px}
+    .logo{
+      width:38px; height:38px;
+      border-radius:14px;
+      background: linear-gradient(135deg, rgba(122,167,255,.95), rgba(141,255,215,.75));
+      box-shadow: 0 14px 30px rgba(0,0,0,.35);
+    }
+    .brand .name{font-weight:780; letter-spacing:.2px}
+    .brand .role{font-size:12.5px; color:var(--muted); margin-top:-2px}
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .links a{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      background: transparent;
+    }
+    .links a:hover{
+      text-decoration:none;
+      border-color: var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+    }
+
+    .card{
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .hero{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: 1.35fr .85fr;
+      gap: 16px;
+      align-items:stretch;
+    }
+    .heroMain{padding:26px; position:relative; overflow:hidden}
+    .heroMain:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(900px 340px at 12% 0%, rgba(122,167,255,.22), transparent 65%),
+        radial-gradient(900px 340px at 88% 10%, rgba(141,255,215,.14), transparent 60%);
+      pointer-events:none;
+    }
+    .heroMain > *{position:relative}
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent));
+      box-shadow: 0 0 0 6px rgba(141,255,215,.10);
+    }
+    h1{
+      margin: 12px 0 10px;
+      font-size: 40px;
+      line-height:1.12;
+      letter-spacing:-.6px;
+    }
+    .subtitle{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 15.5px;
+      max-width: 85ch;
+    }
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px}
+    .pill{
+      font-size: 12px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      white-space: nowrap;
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      font-size: 13.5px;
+    }
+    .btn:hover{ text-decoration:none; background: rgba(255,255,255,.07) }
+    .btn.primary{
+      border-color: rgba(122,167,255,.55);
+      background: linear-gradient(135deg, rgba(122,167,255,.22), rgba(141,255,215,.10));
+    }
+    .icon{
+      width:18px; height:18px;
+      display:grid; place-items:center;
+      border-radius:8px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .heroSide{padding:18px; display:flex; flex-direction:column; gap:12px}
+    .mini{
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+    }
+    .mini h3{margin:0 0 8px; font-size: 14px; letter-spacing:.2px}
+    .kv{
+      display:grid;
+      grid-template-columns: 145px 1fr;
+      gap:8px 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .kv b{color: var(--text); font-weight: 700}
+    .kv .mono{font-family:var(--mono)}
+    .divider{height:1px; background: rgba(255,255,255,.12); margin: 12px 0}
+
+    section{margin-top: 18px}
+    .sectionHead{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap:12px;
+      margin: 14px 4px 10px;
+    }
+    .sectionHead h2{margin:0; font-size: 18px; letter-spacing:.2px}
+    .sectionHead p{margin:0; color: var(--muted); font-size: 13.5px}
+
+    .block{padding: 20px; border-radius: var(--radius2)}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap: 14px}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px}
+
+    .item{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+    }
+    .itemTop{display:flex; justify-content:space-between; gap: 10px; align-items:baseline}
+    .title{font-weight:760}
+    .meta{font-size:12.5px; color: var(--faint)}
+    .item p{margin: 8px 0 0; color: var(--muted); font-size: 13.5px}
+    .item ul{margin:10px 0 0; padding-left: 18px; color: var(--muted); font-size: 13.5px}
+    .item li{margin: 6px 0}
+    .tags{display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px}
+    .tag{
+      font-size: 11.5px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .skillBox{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+    }
+    .skillBox h4{margin: 0 0 8px; font-size: 13.5px}
+    .skillBox .subline{margin:0 0 10px; color: var(--faint); font-size: 12.5px}
+    .skillBox ul{
+      margin:0; padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .skillBox li{margin: 4px 0}
+
+    .callout{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(122,167,255,.35);
+      background: linear-gradient(135deg, rgba(122,167,255,.12), rgba(141,255,215,.06));
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    /* Media / gallery */
+    .mediaGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .media{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      display:block;
+      filter: saturate(1.02);
+    }
+    .media .cap{
+      padding:10px 12px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* Light mode */
+    html.light-mode {
+      --bg: #f6f8fa;
+      --text: #1c1e21;
+      --muted: #555;
+      --faint: #888;
+      --line: rgba(0,0,0,.12);
+      --panel: rgba(0,0,0,.04);
+      --panel2: rgba(0,0,0,.06);
+      --shadow: 0 18px 55px rgba(0,0,0,.1);
+      --accent: #007bff;
+      --accent2: #17c671;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      transition: all 0.3s ease;
+      margin-left: auto;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,.09); }
+
+    .pill:hover, .tag:hover, .skillBox:hover {
+      transform: scale(1.01);
+      background: rgba(255,255,255,.07);
+      transition: all 0.2s ease-in-out;
+    }
+    .btn.primary { transition: all 0.2s ease-in-out; }
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(122,167,255,.30), rgba(141,255,215,.15));
+      box-shadow: 0 8px 20px rgba(122,167,255,.2);
+    }
+
+    footer{
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12.5px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+
+    @media (max-width: 1040px){
+      .hero{grid-template-columns: 1fr}
+      .grid3{grid-template-columns: 1fr}
+      .mediaGrid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 820px){
+      .grid2{grid-template-columns: 1fr}
+      .skills{grid-template-columns: 1fr}
+      h1{font-size: 34px}
+      .kv{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+      .nav .inner{align-items:flex-start; flex-direction:column}
+    }
+  </style>
 </head>
+
 <body>
-  <p>If the page does not redirect, open <a href="./portfolio/">the portfolio</a>.</p>
+  <header class="nav" role="banner">
+    <div class="inner">
+      <div class="brand" aria-label="Site identity">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="name">Sinan Bilir</div>
+          <div class="role">Machine Learning Engineer (NLP &amp; Generative AI) | Production-Grade AI Systems | MLOps &amp; Cloud Automation</div>
+        </div>
+      </div>
+
+      <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+      <nav class="links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#details">Details</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#modules">MSc Modules</a>
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" role="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top" aria-label="Hero">
+      <div class="card heroMain">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>Applied AI • Data Engineering • Clinical Decision Support • London/Hybrid</span></div>
+
+        <h1>Trustworthy, auditable AI systems engineered for production delivery.</h1>
+
+        <p class="subtitle">
+          End-to-end machine learning engineering spanning data engineering, model development, validation, deployment, monitoring, and continuous
+          improvement, with focused capability in NLP, generative AI, and regulated decision-support workflows for healthcare settings.
+        </p>
+
+        <div class="pillRow" aria-label="Key themes">
+          <span class="pill">Fairness &amp; interpretability</span>
+          <span class="pill">Explainability (SHAP/LIME)</span>
+          <span class="pill">Calibrated probabilistic outputs</span>
+          <span class="pill">Cloud-native pipelines</span>
+          <span class="pill">CI/CD &amp; MLOps</span>
+          <span class="pill">Clinician-facing applications</span>
+          <span class="pill">Azure ML</span>
+        </div>
+
+        <div class="ctaRow" aria-label="Primary actions">
+          <a class="btn primary" href="#projects"><span class="icon" aria-hidden="true">↘</span>Selected work</a>
+          <a class="btn" href="#impact"><span class="icon" aria-hidden="true">≋</span>Impact</a>
+          <a class="btn" href="#publications"><span class="icon" aria-hidden="true">⌁</span>Publications</a>
+          <a class="btn" href="#contact"><span class="icon" aria-hidden="true">@</span>Contact</a>
+        </div>
+      </div>
+
+      <div class="mini" style="text-align:center; align-self:start">
+        <img
+          src="assets/img/sinan_image.png"
+          alt="Portrait of Sinan Bilir"
+          style="width:160px;height:160px;object-fit:cover;border-radius:999px;border:1px solid rgba(255,255,255,.16);box-shadow:0 16px 40px rgba(0,0,0,.35)"
+          loading="lazy"
+        />
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">
+          London • ML Engineering • NLP &amp; Generative AI
+        </div>
+        <div class="ctaRow" style="justify-content:center; margin-top:12px">
+          <a class="btn" href="assets/docs/SinanBilir_CV.pdf" download><span class="icon" aria-hidden="true">⬇</span>Download CV</a>
+          <a class="btn" href="assets/docs/Portfolio.pdf" download><span class="icon" aria-hidden="true">⬇</span>Download Portfolio</a>
+        </div>
+      </div>
+
+      <aside class="card heroSide" aria-label="Quick profile">
+        <div class="mini">
+          <h3>Identity & Contact</h3>
+          <div class="kv">
+            <div>Title</div><b>Mr</b>
+            <div>Name</div><b>SINAN BILIR</b>
+            <div>Pronouns</div><b>He/Him</b>
+            <div>Mobile</div><b class="mono">+44 7376 964768</b>
+            <div>Email</div><b class="mono">mrsinanbilir@gmail.com</b>
+            <div>City/Region</div><b>Tottenham</b>
+            <div>Postcode</div><b class="mono">N17 6XA</b>
+            <div>County</div><b>Greater London</b>
+            <div>Country</div><b>UK</b>
+            <div>Languages</div><b>Turkish, English</b>
+            <div>LinkedIn</div><b class="mono">linkedin.com/in/sinanbilir</b>
+            <div>GitHub</div><b class="mono">github.com/MrSiNun</b>
+          </div>
+        </div>
+
+        <div class="mini">
+          <h3>Availability & Work Eligibility</h3>
+          <div class="kv">
+            <div>Location</div><b>Greater London</b>
+            <div>Notice period</div><b>1 Week</b>
+            <div>Current salary</div><b>~ £40,000 per annum</b>
+            <div>Expected salary</div><b>£45,000 per annum</b>
+          </div>
+          <div class="divider" aria-hidden="true"></div>
+          <div class="kv">
+            <div>Immigration</div><b>eVisa (Partner)</b>
+            <div>DOB</div><b>31 July 1992</b>
+            <div>Nationality</div><b>TUR</b>
+            <div>Valid from</div><b>20 June 2025</b>
+            <div>Valid until</div><b>26 December 2027</b>
+            <div>Eligibility</div><b>Eligible to apply for citizenship after this visa</b>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="sectionHead">
+        <h2 id="about-title">About</h2>
+        <p>Professional summary and positioning.</p>
+      </div>
+
+      <div class="card block">
+        <div class="item">
+          <div class="itemTop">
+            <div class="title">Professional Summary</div>
+            <div class="meta">NLP • Generative AI • Production ML</div>
+          </div>
+          <p>
+            Machine Learning Engineer and Data Scientist specialising in natural language processing, generative AI, and production-grade machine learning
+            systems, with a strong focus on fairness, interpretability, and real-world deployment. Lead developer of NeoJan, an advanced AI decision-support
+            platform for neonatal healthcare that integrates heterogeneous data sources and delivers calibrated, explainable predictions within a
+            clinician-facing application. Demonstrates end-to-end ownership of the machine learning lifecycle, spanning data engineering, model development,
+            validation, deployment, monitoring, and continuous improvement. Experienced in scaling AI solutions beyond experimentation into operational,
+            auditable, and maintainable systems, with hands-on expertise in Azure ML, cloud-native pipelines, CI/CD, and MLOps practices. Proven ability to
+            collaborate with architects, developers, and product stakeholders in agile environments to translate complex requirements into reliable AI products
+            with measurable impact. Fully eligible to work in the United Kingdom and Türkiye, and open to hybrid, London-based roles involving applied machine
+            learning, NLP, and generative AI.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section id="details" aria-labelledby="details-title">
+      <div class="sectionHead">
+        <h2 id="details-title">Personal Details</h2>
+        <p>Full administrative and profile information.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <div class="item">
+            <div class="itemTop">
+              <div class="title">Contact & Address</div>
+              <div class="meta">Primary details</div>
+            </div>
+            <ul>
+              <li>Name: SINAN BILIR</li>
+              <li>Title: Mr</li>
+              <li>Pronouns: He/Him</li>
+              <li>Email: mrsinanbilir@gmail.com</li>
+              <li>Mobile: +44 7376 964768</li>
+              <li>Address: 35 Forest Gardens, Tottenham, Greater London, N17 6XA</li>
+              <li>LinkedIn: linkedin.com/in/sinanbilir</li>
+              <li>GitHub: github.com/MrSiNun</li>
+              <li>Languages: Turkish, English</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="itemTop">
+              <div class="title">Downloadable Materials</div>
+              <div class="meta">Static-site friendly</div>
+            </div>
+            <ul>
+              <li><a href="assets/docs/SinanBilir_CV.pdf" download>CV (PDF)</a></li>
+              <li><a href="assets/docs/Transcript.pdf" download>MSc Transcript (PDF)</a></li>
+              <li><a href="assets/docs/Diplomas.pdf" download>Diplomas (PDF)</a></li>
+              <li><a href="assets/docs/Thesis_Industrial_Engineering.pdf" download>BSc Thesis (PDF)</a></li>
+            </ul>
+            <p style="margin-top:10px" class="meta">
+              The files above are referenced for a static website deployment; matching files should be placed under <span class="mono">assets/docs/</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="sectionHead">
+        <h2 id="skills-title">Skills</h2>
+        <p>Complete skill inventory (categorised).</p>
+      </div>
+
+      <div class="card block">
+        <div class="skills" role="list">
+          <div class="skillBox" role="listitem">
+            <h4>Languages (&amp; Scripting)</h4>
+            <p class="subline">Primary development and data tooling.</p>
+            <ul><li>Python</li><li>SQL</li><li>Bash</li><li>Flask</li><li>FastAPI</li><li>Genomics-oriented data processing</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>Machine Learning &amp; AI</h4>
+            <p class="subline">Classical ML, advanced modelling, and explainability.</p>
+            <ul><li>Scikit-Learn</li><li>XGBoost</li><li>LightGBM</li><li>TensorFlow</li><li>Keras</li><li>PyTorch</li><li>CNNs</li><li>RNNs</li><li>LSTMs</li><li>GANs</li><li>Autoencoders</li><li>Transfer Learning</li><li>SHAP</li><li>LIME</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>Natural Language Processing &amp; Generative AI</h4>
+            <p class="subline">Modern NLP stacks and generative workflows.</p>
+            <ul><li>SpaCy</li><li>NLTK</li><li>Hugging Face Transformers</li><li>BERT</li><li>GPT-based architectures</li><li>Text classification</li><li>Semantic similarity</li><li>Topic modelling</li><li>Information extraction</li><li>Embedding pipelines</li><li>Prompt engineering</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>MLOps &amp; Deployment</h4>
+            <p class="subline">Operationalisation, tracking, and lifecycle governance.</p>
+            <ul><li>Docker</li><li>Kubernetes</li><li>MLflow</li><li>Airflow</li><li>TensorFlow Serving</li><li>CI/CD (GitHub Actions, Jenkins)</li><li>Model versioning</li><li>Monitoring</li><li>Retraining pipelines</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>Data Engineering &amp; Cloud</h4>
+            <p class="subline">Scalable data systems and cloud platforms.</p>
+            <ul><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Apache Spark</li><li>Hadoop</li><li>Databricks</li><li>AWS (S3, EC2, Lambda, SageMaker)</li><li>GCP (BigQuery, Vertex AI)</li><li>Azure ML</li><li>Azure-based feature engineering and orchestration</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>Visualisation &amp; BI Tools</h4>
+            <p class="subline">Decision-support visualisation and executive reporting.</p>
+            <ul><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>Power BI</li><li>Tableau</li><li>Looker</li><li>Streamlit</li><li>Dash</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>DevOps &amp; Tools</h4>
+            <p class="subline">Engineering workflow, delivery discipline, and product collaboration.</p>
+            <ul><li>Git</li><li>GitHub</li><li>GitLab</li><li>REST APIs</li><li>Terraform</li><li>Agile</li><li>A/B Testing</li><li>Statistical &amp; Business Analysis</li></ul>
+          </div>
+
+          <div class="skillBox" role="listitem">
+            <h4>Model Evaluation</h4>
+            <p class="subline">Metrics and calibration analysis.</p>
+            <ul><li>ROC AUC</li><li>PR AUC</li><li>Precision–Recall</li><li>F1 Score</li><li>Brier Score</li><li>Calibration analysis</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" aria-labelledby="education-title">
+      <div class="sectionHead">
+        <h2 id="education-title">Education</h2>
+        <p>Degrees, dates, grades, and thesis detail.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <div class="item">
+            <div class="itemTop">
+              <div class="title">Master of Science — Data Science &amp; Artificial Intelligence</div>
+              <div class="meta">University of Liverpool • 05/2023–09/2026 (Expected)</div>
+            </div>
+            <ul>
+              <li>Graduation score: First Class Honours</li>
+              <li>Key courses: Machine Learning in Practice; Deep Learning; Software Development in Practice; Databases and Information Systems; Math and Statistics for AI &amp; Data Science; Cloud Computing; Global Trends in Computer Science</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="itemTop">
+              <div class="title">Bachelor of Science — Industrial Engineering</div>
+              <div class="meta">Dokuz Eylul University • 09/2011–08/2016</div>
+            </div>
+            <ul>
+              <li>Thesis: Kanban and Pull Production System Design under Lean Management</li>
+              <li>Leadership: Regional Manager for ESTIEM, leading multiple international projects on business process optimisation and supply chain management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE EXPERTISE -->
+    <section id="modules" aria-labelledby="modules-title">
+      <div class="sectionHead">
+        <h2 id="modules-title">MSc Module Subject Expertise</h2>
+        <p>Explicit coverage of each named module subject.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <div class="item"><div class="itemTop"><div class="title">Machine Learning in Practice</div><div class="meta">Applied ML delivery</div></div>
+            <p>Expertise coverage includes end-to-end supervised and unsupervised workflows, feature engineering, model selection, error analysis, and evaluation design suitable for real-world deployment contexts.</p>
+          </div>
+
+          <div class="item"><div class="itemTop"><div class="title">Deep Learning</div><div class="meta">Neural modelling</div></div>
+            <p>Expertise coverage includes modern deep learning stacks and methods aligned with implemented projects, including CNN pipelines, optimisation, regularisation, and interpretability methods.</p>
+          </div>
+
+          <div class="item"><div class="itemTop"><div class="title">Software Development in Practice</div><div class="meta">Engineering discipline</div></div>
+            <p>Expertise coverage includes SDLC execution, maintainable code practices, testing discipline, and delivery workflows aligned with Git-based collaboration and production constraints.</p>
+          </div>
+
+          <div class="item"><div class="itemTop"><div class="title">Databases and Information Systems</div><div class="meta">Data systems</div></div>
+            <p>Expertise coverage includes relational design, transaction concepts, interrogation/query practice, and applied database paradigms supporting analytical and ML pipelines.</p>
+          </div>
+
+          <div class="item"><div class="itemTop"><div class="title">Math and Statistics for AI &amp; Data Science</div><div class="meta">Foundations</div></div>
+            <p>Expertise coverage includes statistical foundations supporting principled modelling, evaluation, and interpretation, including calibration and uncertainty-aware analysis.</p>
+          </div>
+
+          <div class="item"><div class="itemTop"><div class="title">Cloud Computing</div><div class="meta">Cloud-native delivery</div></div>
+            <p>Expertise coverage includes cloud-native architectures and operational practices consistent with deployed and containerised ML systems, and experience with Azure ML, AWS, and GCP services listed in the skill inventory.</p>
+          </div>
+
+          <div class="item"><div class="itemTop"><div class="title">Global Trends in Computer Science</div><div class="meta">Contemporary computing themes</div></div>
+            <p>Expertise coverage includes current computing trends and the applied implications for production AI systems, including cybersecurity, data protection, big data analytics, and responsible AI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact" aria-labelledby="impact-title">
+      <div class="sectionHead">
+        <h2 id="impact-title">Impact & Evidence</h2>
+        <p>Visual artefacts (add screenshots and figures under assets/).</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <div class="item">
+            <div class="itemTop">
+              <div class="title">NeoJan — Visual Evidence</div>
+              <div class="meta">UI, pipeline, and explainability</div>
+            </div>
+            <p>Project visuals are rendered from <span class="mono">assets/img/projects/</span>. Replace images with updated screenshots as the platform evolves.</p>
+            <div class="mediaGrid" aria-label="NeoJan media grid">
+              <figure class="media"><img src="assets/img/projects/neojan-ui.png" alt="NeoJan application user interface screenshot" loading="lazy"><figcaption class="cap">Clinician-facing UI</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/neojan-pipeline.png" alt="NeoJan data and ML pipeline diagram" loading="lazy"><figcaption class="cap">End-to-end pipeline</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/neojan-shap.png" alt="NeoJan explainability visualisation (SHAP)" loading="lazy"><figcaption class="cap">Explainability (SHAP)</figcaption></figure>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="itemTop">
+              <div class="title">Model Performance Figures</div>
+              <div class="meta">ROC/PR and evaluation plots</div>
+            </div>
+            <p>Figures can be exported as SVG/PNG and stored in <span class="mono">assets/charts/</span> for crisp, recruiter-friendly display.</p>
+            <div class="mediaGrid" aria-label="Performance charts">
+              <figure class="media"><img src="assets/charts/neojan-pr-curve.svg" alt="NeoJan precision-recall curve" loading="lazy"><figcaption class="cap">PR curve</figcaption></figure>
+              <figure class="media"><img src="assets/charts/neojan-roc-curve.svg" alt="NeoJan ROC curve" loading="lazy"><figcaption class="cap">ROC curve</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/pneumonia-roc.png" alt="Pneumonia model ROC curve" loading="lazy"><figcaption class="cap">Pneumonia ROC</figcaption></figure>
+            </div>
+            <p class="meta" style="margin-top:10px">If an image path is missing, the browser will show a broken image; add the file using the exact filename referenced above.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="sectionHead">
+        <h2 id="experience-title">Work Experience</h2>
+        <p>Complete role list and detailed responsibilities.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <article class="item">
+            <div class="itemTop">
+              <div class="title">Lead Researcher — Machine Learning &amp; AI Systems</div>
+              <div class="meta">University of Liverpool School of Medicine &amp; Computer Science Faculty Collaboration • Remote • 06/2025–Present</div>
+            </div>
+			<ul>
+			  <li>Leads a pioneering biomedical artificial intelligence project within the MSc in Data Science &amp; AI programme, representing the first known study to integrate multi-omics data (gene expression and metabolomics) with synthetic neonatal clinical datasets (Synthea and NEST360) for the prediction of neonatal jaundice risk, contributing to translational healthcare innovation.</li>
+			  <li>Designed and implemented a scalable, end-to-end, full-stack machine learning pipeline tailored to healthcare data, encompassing data ingestion, preprocessing, feature engineering, model training, validation, and evaluation.</li>
+			  <li>Integrated multi-omics datasets with synthetic neonatal electronic health records to construct a harmonised analytical dataset supporting both supervised learning and unsupervised discovery techniques such as principal component analysis and K-Means clustering.</li>
+			  <li>Developed, applied, and fine-tuned a range of machine learning and deep learning models, including Random Forest, XGBoost, convolutional neural networks, and deep neural networks, using cross-validation strategies to achieve clinically relevant predictive performance.</li>
+			  <li>Employed advanced feature engineering, dimensionality reduction, clustering, and correlation analysis to support biomarker discovery and cross-domain insight generation.</li>
+			  <li>Integrated SHAP-based explainability methods to ensure model transparency, auditability, and clinician trust, producing calibrated probabilistic outputs suitable for risk-based decision support.</li>
+			  <li>Built and deployed an interactive Streamlit application (NeoJan) to enable clinician-friendly deployment, structured CSV and JSON ingestion, interactive visual exploration of predictions, three-dimensional PCA visualisation, dynamic threshold tuning, and automated clinical reporting.</li>
+			  <li>Collaborated with NHS Digital Health Units and the University of Liverpool School of Medicine to align analytical outputs with real-world clinical pathways and regulated decision-making environments.</li>
+			  <li>Utilised biomedical data platforms, including PhysioNet, to supplement and validate synthetic datasets in accordance with data governance requirements and research ethics approvals.</li>
+			  <li>Emphasised reproducibility and MLOps practices by employing GitHub for version control, designing modular and extensible codebases in Python and Jupyter, and implementing Dockerised environments, CI/CD workflows, and experiment tracking using MLflow.</li>
+			  <li>Prepared the platform for pilot deployment within NHS partner hospitals, supporting future clinical evaluation and translational impact.</li>
+			  <li>Applied a comprehensive technology stack including Python, Scikit-Learn, XGBoost, TensorFlow, Pandas, Streamlit, SHAP, PCA, GitHub, Jupyter, Synthea, NEST360, PhysioNet, Power BI for interim visualisations, and NHS-aligned clinical data formats.</li>
+			</ul>
+		</article>
+
+          <article class="item">
+            <div class="itemTop">
+              <div class="title">Data Scientist (4 Months Contract)</div>
+              <div class="meta">MGL Licensing • Remote • 02/2024–06/2024</div>
+            </div>
+            <ul>
+              <li>Conducted customer segmentation using K-Means clustering, delivering measurable improvements in customer retention.</li>
+              <li>Designed and delivered interactive analytical dashboards to support operational and strategic decision-making.</li>
+              <li>Produced real-time analytics pipelines identifying behavioural trends and performance bottlenecks.</li>
+              <li>Applied A/B testing methodologies to optimise engagement strategies and improve return on investment.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <div class="itemTop">
+              <div class="title">Data Scientist (Contractor at a Job Simulation)</div>
+              <div class="meta">British Airways • Remote • 03/2024–05/2024</div>
+            </div>
+			<ul>
+  			  <li>I worked on predictive analysis for British Airways. The goal was to predict customer bookings based on various features such as sales channel, trip type, route, and booking origin.</li>
+  			  <li>I performed exploratory data analysis, feature engineering, and trained a Random Forest Classifier model.</li>
+  			  <li>Developed a machine learning model to predict booking completion for British Airways customers.</li>
+  			  <li>Conducted exploratory data analysis to identify patterns and trends in customer behaviour.</li>
+			  <li>Engineered features from existing data, including creating new columns for origin and destination airports.</li>
+			  <li>Achieved an accuracy of 85% on the test set using the Random Forest Classifier.</li>
+			  <li>Presented findings and insights to stakeholders, contributing to data-driven decision-making.</li>
+			  <li>Developed a Random Forest classifier to predict customer booking behaviour, achieving strong predictive accuracy.</li>
+			  <li>Performed exploratory data analysis and engineered high-impact features.</li>
+			  <li>Communicated data-driven insights to non-technical stakeholders, supporting business decisions.</li>
+			</ul>
+		 </article>
+
+          <article class="item">
+            <div class="itemTop">
+              <div class="title">Lead-Consultant in Sales &amp; BI Operations (8 Months Contract)</div>
+              <div class="meta">Antal TECH Jobs • Hybrid in London • 08/2022–03/2023</div>
+            </div>
+			<ul>
+			  <li>Built and deployed machine learning models to predict job seeker engagement, increasing applications by 20%.</li>
+			  <li>Designed automated dashboards using Power BI and SQL to support recruitment and commercial decision-making.</li>
+			  <li>Optimised marketing strategies through Google Analytics and A/B testing, improving conversion rates by 15%.</li>
+			  <li>Led end-to-end operation of a niche technology job board, managing both front-end and back-end development.</li>
+			  <li>Enhanced website user experience, traffic, and performance using SEO, analytics, and UX optimisation.</li>
+			  <li>Reported performance insights directly to the CFO of Antal International.</li>
+			  <li>Drove platform growth by expanding the client base, increasing candidate acquisition, and strengthening brand exposure.</li>
+			  <li>Collaborated with global Antal teams across 35 countries and built strategic partnerships.</li>
+			  <li>Owned the full sales cycle across multiple regions, including India, the UAE, Spain, and Romania.</li>
+			  <li>Planned and executed multi-channel marketing campaigns, content creation, and job promotion initiatives.</li>
+			</ul>	
+         </article>
+
+          <article class="item">
+            <div class="itemTop">
+              <div class="title">Business Intelligence Consultant (Freelancer)</div>
+              <div class="meta">SB Sales and Marketing Consultancy • London • 02/2019–08/2022</div>
+            </div>
+			<ul>
+			  <li>Worked as a self-employed Business Intelligence Consultant at SB Sales and Marketing Consultancy in London (hybrid), delivering data-driven solutions to support sales and marketing functions.</li>
+			  <li>Developed and implemented data-driven strategies to generate new business opportunities, resulting in a 15% increase in sales revenue.</li>
+			  <li>Utilised Python for predictive modelling to optimise future business strategies, improve decision-making, and enhance sales forecasting accuracy.</li>
+			  <li>Designed, built, and maintained business intelligence solutions to analyse sales performance and market trends, empowering stakeholders with actionable insights.</li>
+			  <li>Applied advanced SQL queries to extract, optimise, and analyse large-scale datasets, identifying trends to support strategic planning for sales and marketing teams.</li>
+			  <li>Implemented data-driven techniques to enhance customer segmentation, improve campaign performance, and elevate overall sales effectiveness.</li>
+			  <li>Introduced and supported sales enablement technologies that increased lead generation by 30% and improved lead conversion rates by 5%.</li>
+			  <li>Analysed end-to-end sales cycle data to optimise processes, achieving a 50% closing rate and improving resource allocation.</li>
+			  <li>Coordinated data-driven logistics and operational analytics to ensure timely deliveries, contributing to a 45% increase in customer satisfaction.</li>
+			  <li>Presented value-driven, data-backed insights to stakeholders, strengthening product positioning and driving higher customer engagement.</li>
+			  <li>Supported sales leadership by identifying new business opportunities through advanced data analytics, enabling sustainable and scalable growth.</li>
+			</ul>
+          </article>
+          
+          <article class="item">
+            <div class="itemTop">
+              <div class="title">Sales and Marketing Engineer (Senior Sales Data Analyst)</div>
+              <div class="meta">Ant Kalip M&amp;G Group • Turkey • 02/2017–02/2019</div>
+            </div>
+			<ul>
+			  <li>Analysed sales and operations data using SAP ERP (SD module) and Excel to monitor KPIs, improve forecasting accuracy, and increase sales efficiency by 15%.</li>
+			  <li>Applied SQL and data analytics to optimise procurement and supply chain processes, reducing lead times by 20%.</li>
+			  <li>Conducted customer and key account analysis to identify purchasing patterns, increasing customer retention by 10%.</li>
+			  <li>Developed MIS reports, dashboards, and Power BI visualisations to track project performance and support data-driven decision-making.</li>
+			  <li>Performed market and competitor analysis using Google Analytics and customer feedback to support international sales strategy and exhibitions.</li>
+			  <li>Collaborated with logistics teams on inventory and delivery planning, improving stock management accuracy by 30%.</li>
+			  <li>Supervised and mentored junior team members using performance metrics aligned with organisational goals.</li>
+			  <li>Worked with international clients and suppliers, supporting contract discussions, technical specifications, and strategic recommendations.</li>
+			</ul>
+          </article>
+        </div>
+      </div>
+    </section>
+   <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="sectionHead">
+        <h2 id="projects-title">Selected Projects</h2>
+        <p>Featured work products, implementations, and visuals.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <article class="item">
+            <div class="itemTop"><div class="title">NeoJan — Multi-Omics Machine Learning for Neonatal Jaundice Prediction</div><div class="meta">University of Liverpool • 2025–2026</div></div>
+            <p>Developed an integrated multi-omics machine-learning framework for neonatal jaundice risk prediction, unifying omics and clinical data, delivering explainable predictions, and deploying a clinician-oriented Streamlit application with containerised reproducibility.</p>
+            <div class="tags"><span class="tag">Multi-omics</span><span class="tag">Risk prediction</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">SHAP/LIME</span></div>
+            <div class="mediaGrid" aria-label="NeoJan project gallery">
+              <figure class="media"><img src="assets/img/projects/neojan-ui.png" alt="NeoJan UI screenshot" loading="lazy"><figcaption class="cap">Application UI</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/neojan-pipeline.png" alt="NeoJan pipeline diagram" loading="lazy"><figcaption class="cap">Pipeline</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/neojan-shap.png" alt="NeoJan SHAP visualisation" loading="lazy"><figcaption class="cap">Explainability</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="itemTop"><div class="title">Pneumonia Detection Using Convolutional Neural Networks (CNNs)</div><div class="meta">University of Liverpool • MSc</div></div>
+            <p>Developed and deployed a CNN-based deep learning model for pneumonia classification from chest X-ray images, implementing preprocessing and class imbalance handling, applying transfer learning (ResNet15) and K-Fold validation, and using Grad-CAM/SHAP to strengthen interpretability.</p>
+            <div class="tags"><span class="tag">CNN</span><span class="tag">TensorFlow/Keras</span><span class="tag">Transfer learning</span><span class="tag">Grad-CAM</span></div>
+            <div class="mediaGrid" aria-label="Pneumonia project gallery">
+              <figure class="media"><img src="assets/img/projects/pneumonia-roc.png" alt="Pneumonia ROC curve" loading="lazy"><figcaption class="cap">ROC curve</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/pneumonia-confusion.png" alt="Pneumonia confusion matrix" loading="lazy"><figcaption class="cap">Confusion matrix</figcaption></figure>
+              <figure class="media"><img src="assets/img/projects/pneumonia-gradcam.png" alt="Pneumonia Grad-CAM heatmap" loading="lazy"><figcaption class="cap">Grad-CAM</figcaption></figure>
+            </div>
+          </article>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="grid2">
+          <article class="item">
+            <div class="itemTop"><div class="title">Deep Learning Fashion MNIST Classification</div><div class="meta">University of Liverpool • MSc</div></div>
+            <p>Implemented and evaluated neural network variants on the Fashion MNIST dataset, comparing activation functions and regularisation strategies (Sigmoid, ReLU, Dropout) using learning curves and performance tracking.</p>
+            <div class="tags"><span class="tag">Neural nets</span><span class="tag">Regularisation</span><span class="tag">Learning curves</span></div>
+          </article>
+
+          <article class="item">
+            <div class="itemTop"><div class="title">Predicting Atmospheric Emissions Using Machine Learning Models (LAEI)</div><div class="meta">University of Liverpool • MSc</div></div>
+            <p>Developed predictive models for nitrogen oxides estimation across London using LAEI 2019 geospatial data, implementing feature engineering and dimensionality reduction (PCA) and applying models including Random Forest and XGBoost.</p>
+            <div class="tags"><span class="tag">GeoPandas</span><span class="tag">PCA</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span></div>
+          </article>
+
+          <article class="item">
+            <div class="itemTop"><div class="title">Data Quality Analysis and Cleansing of SIS Faculty Dataset</div><div class="meta">University of Liverpool • MSc</div></div>
+            <p>Conducted data quality analysis and cleansing for a Student Information System dataset, resolving missingness, inconsistent formatting, and redundancy to create analysis-ready outputs for machine learning.</p>
+            <div class="tags"><span class="tag">Data profiling</span><span class="tag">Cleaning</span><span class="tag">Pandas</span></div>
+          </article>
+
+          <article class="item">
+            <div class="itemTop"><div class="title">Secure Client–Server Communication System</div><div class="meta">University of Liverpool • MSc</div></div>
+            <p>Developed a secure client-server communication system in Python using symmetric encryption, supporting JSON, Pickle (binary), and XML serialisation, with robust message handling.</p>
+            <div class="tags"><span class="tag">Security</span><span class="tag">Fernet</span><span class="tag">JSON/XML/Pickle</span></div>
+          </article>
+
+          <article class="item">
+            <div class="itemTop"><div class="title">Shortest Path Algorithm Implementation</div><div class="meta">University of Liverpool • MSc</div></div>
+            <p>Implemented and tested Floyd’s Algorithm for shortest path computation, emphasising algorithmic correctness and efficiency awareness.</p>
+            <div class="tags"><span class="tag">Algorithms</span><span class="tag">Python</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" aria-labelledby="pubs-title">
+      <div class="sectionHead">
+        <h2 id="pubs-title">Publications &amp; Thesis Work</h2>
+        <p>Research output and academic dissertation/thesis items.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <article class="item">
+            <div class="itemTop"><div class="title">Research &amp; Publications (In Preparation)</div><div class="meta">2025–2026</div></div>
+            <p>Bilir S., Garron N., Kelm K. (2025). “Development of a Machine Learning Model and Software Platform for Multi-Omics-Based Prediction of Neonatal Jaundice Risk”. Target journal: Frontiers in AI – Healthcare Informatics (2026).</p>
+            <div class="tags"><span class="tag">Healthcare AI</span><span class="tag">Multi-omics</span><span class="tag">Explainable ML</span><span class="tag">Clinical deployment</span></div>
+          </article>
+
+          <article class="item">
+            <div class="itemTop"><div class="title">Industrial Engineering Thesis</div><div class="meta">2015–2016</div></div>
+            <p>“Kanban and Pull Production System Design under Lean Management”. Thesis work focusing on lean manufacturing, pull systems, and process design.</p>
+            <div class="tags"><span class="tag">Lean</span><span class="tag">Kanban</span><span class="tag">Operations</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" aria-labelledby="certs-title">
+      <div class="sectionHead">
+        <h2 id="certs-title">Certifications</h2>
+        <p>Credential list with optional certificate thumbnails.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid3">
+          <div class="item">
+            <div class="itemTop"><div class="title">Artificial Intelligence Programme</div><div class="meta">University of Oxford</div></div>
+            <p>Programme study referenced in portfolio materials.</p>
+            <div class="mediaGrid" style="grid-template-columns:1fr; margin-top:10px">
+              <figure class="media"><img src="assets/img/credentials/oxford-ai-programme.png" alt="University of Oxford AI Programme certificate thumbnail" loading="lazy"><figcaption class="cap">Certificate thumbnail</figcaption></figure>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="itemTop"><div class="title">Machine Learning with Scikit-Learn</div><div class="meta">Advance Practices • Sep 2024</div></div>
+            <p>Applied ML modelling workflows using Scikit-learn, including evaluation and practical delivery patterns.</p>
+            <div class="mediaGrid" style="grid-template-columns:1fr; margin-top:10px">
+              <figure class="media"><img src="assets/img/credentials/ml-sklearn.png" alt="Machine Learning with Scikit-Learn certificate thumbnail" loading="lazy"><figcaption class="cap">Certificate thumbnail</figcaption></figure>
+            </div>
+          </div>
+
+		<div class="item">
+		  <div class="itemTop">
+		    <div class="title">The Data Science of Health Informatics</div>
+		    <div class="meta">Johns Hopkins University • Coursera • Jan 2026</div>
+		  </div>
+		
+		  <p>
+		    Comprehensive training in health informatics, data governance, clinical data querying,
+		    and real-world healthcare analytics, with emphasis on ethical data use and hospital-level
+		    decision support.
+		  </p>
+		
+		  <div class="mediaGrid" style="grid-template-columns:1fr; margin-top:10px">
+		    <figure class="media">
+		      <img 
+		        src="assets/img/credentials/TheDataScienceofHealthInformaticss.png"
+		        alt="Johns Hopkins University – The Data Science of Health Informatics course certificate"
+		        loading="lazy"
+		      >
+		      <figcaption class="cap">Course certificate (Johns Hopkins University via Coursera)</figcaption>
+		    </figure>
+		  </div>
+		</div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="item">
+          <div class="itemTop"><div class="title">Additional certificates (as referenced in CV materials)</div><div class="meta">Full list is maintained in the CV</div></div>
+          <p class="meta">Add further certificate thumbnails under <span class="mono">assets/img/credentials/</span> and duplicate the card template above for each item.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="sectionHead">
+        <h2 id="contact-title">Contact</h2>
+        <p>Direct channels and public profiles.</p>
+      </div>
+
+      <div class="card block">
+        <div class="grid2">
+          <div class="item">
+            <div class="itemTop"><div class="title">Email</div><div class="meta">Primary</div></div>
+            <p><a href="mailto:mrsinanbilir@gmail.com">mrsinanbilir@gmail.com</a></p>
+            <div class="tags"><span class="tag">London, UK</span><span class="tag">Hybrid/remote roles</span></div>
+          </div>
+
+          <div class="item">
+            <div class="itemTop"><div class="title">Profiles</div><div class="meta">Public</div></div>
+            <p>
+              <a href="https://www.linkedin.com/in/sinanbilir/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <span class="meta"> • </span>
+              <a href="https://github.com/MrSiNun" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+            <p class="meta" style="margin-top:10px">A contact form can be added as a static-site mailto action or wired to a serverless endpoint (e.g., Netlify Forms) without changing page layout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer role="contentinfo">
+      <div>© <span id="year"></span> Sinan Bilir. All rights reserved.</div>
+      <div>Designed for recruiter readability and deployment as a static site.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('light-mode');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(targetId);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
