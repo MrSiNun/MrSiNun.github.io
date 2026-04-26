@@ -1,2 +1,5 @@
 .DS_Store
 resources/*.zip
+*.backup.html
+index.backup*.html
+copy*.html
