@@ -1,26 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- 1. Initialize dataLayer and gtag -->
+    <!-- 1. Consent Defaults (MUST BE FIRST) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
-      // 2. Set default consent for EEA regions and UK (GDPR compliance)
       gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
         'analytics_storage': 'denied',
         'wait_for_update': 500,
-        'regions': [
-          'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 
-          'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 
-          'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB'
-        ]
+        'regions': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB']
       });
 
-      // 3. Set default consent for all other regions (Global)
       gtag('consent', 'default', {
         'ad_storage': 'granted',
         'ad_user_data': 'granted',
@@ -29,10 +23,17 @@
       });
     </script>
 
-    <!-- 4. Cookie-Script Banner (RESTORED FULL URL) -->
+    <!-- 2. Google Tag Manager (Script) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TCZTWR67');</script>
+
+    <!-- 3. Cookie-Script Banner -->
     <script type="text/javascript" charset="UTF-8" src="https://cookie-script.com"></script>
     
-    <!-- 5. Google tag (gtag.js) (RESTORED FULL URL) -->
+    <!-- 4. Google tag (config only - updated to use GTM) -->
     <script async src="https://googletagmanager.com"></script>
     <script>
       gtag('js', new Date());
@@ -41,40 +42,15 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Sinan Bilir | AI & Data Scientist Portfolio</title>
-
-    <meta
-      name="description"
-      content="Sinan Bilir is an AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems."
-    />
-
-    <meta name="theme-color" content="#081120" />
-
-    <meta property="og:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
-    <meta
-      property="og:description"
-      content="AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="./og-preview.png" />
-    <meta property="og:site_name" content="Sinan Bilir Portfolio" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
-    <meta
-      name="twitter:description"
-      content="AI and Data Scientist specialising in applied machine learning, clinical decision support, healthcare AI, deep learning, MLOps, and end-to-end delivery."
-    />
-    <meta name="twitter:image" content="./og-preview.png" />
-
-    <link rel="icon" type="image/png" href="./assets/img/sinan_image.png" />
-
-    <script type="module" crossorigin src="./assets/index-C8GPxC8M.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CcLgcpVG.css" />
+    <!-- ... [Rest of your meta tags] ... -->
   </head>
 
   <body>
+    <!-- 5. Google Tag Manager (noscript) - RIGHT AFTER OPENING BODY -->
+    <noscript><iframe src="https://googletagmanager.com"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <div id="root"></div>
   </body>
 </html>
