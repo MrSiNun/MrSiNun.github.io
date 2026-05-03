@@ -1,29 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-NFB7GWFB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GT-NFB7GWFB');
+</script>    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 1. CONSENT DEFAULT STATE (Must be the absolute first script) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // EEA and UK: Denied by default
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500,
+            'regions': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB']
+        });
+
+        // Other regions: Granted by default
+        gtag('consent', 'default', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+        });
+    </script>
 <!-- =========================================================
 PORTFOLIO TRACKING SETUP
 Use this for: https://mrsinanbilir.github.io
 
+    <!-- 2. GOOGLE TAG MANAGER (GTM) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://googletagmanager.com;
+    })(window,document,'script','dataLayer','GTM-TCZTWR67');</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-NFB7GWFB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 Google Analytics account:
 Sinan Bilir / 392600909
 
+      gtag('config', 'GT-NFB7GWFB');
+    </script>
 GA4 property:
 https://mrsinanbilir.github.io / 534626399
 
+    <!-- 3. COOKIE-SCRIPT BANNER (Corrected URL) -->
+    <script type="text/javascript" charset="UTF-8" src="https://cookie-script.com"></script>
 Google Tag Manager account:
 my portfolio / 6351970265
 
+    <title>Sinan Bilir | AI & Data Scientist Portfolio</title>
 IMPORTANT:
 The numbers above are account/property IDs.
 They are NOT the final website tracking codes.
 
+    <meta name="description" content="Sinan Bilir is an AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems." />
+    <meta name="theme-color" content="#081120" />
 Sinan still needs:
 1. GA4 Measurement ID: starts with G-
 2. GTM Container ID: starts with GTM-
 ========================================================= -->
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
+    <meta property="og:description" content="AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./og-preview.png" />
+    <meta property="og:site_name" content="Sinan Bilir Portfolio" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
+    <meta name="twitter:description" content="AI and Data Scientist specialising in applied machine learning, clinical decision support, healthcare AI, deep learning, MLOps, and end-to-end delivery." />
+    <meta name="twitter:image" content="./og-preview.png" />
 <!-- OPTION 1: GOOGLE TAG MANAGER - RECOMMENDED -->
 <!-- Paste this as high as possible inside the <head> tag -->
 
+    <link rel="icon" type="image/png" href="./assets/img/sinan_image.png" />
+
+    <!-- Assets -->
+    <script type="module" crossorigin src="./assets/index-C8GPxC8M.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CcLgcpVG.css" />
+</head>
+<body>
+    <!-- 4. GTM NOSCRIPT (Immediately after body opening) -->
+    <noscript><iframe src="https://googletagmanager.com"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="root"></div>
 <script>
 (function(w,d,s,l,i){
   w[l]=w[l]||[];
@@ -59,5 +138,11 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
+    <!-- Social Links -->
+    <ul class="wp-block-social-links">
+        <li><a href="https://gravatar.com/dazzling65c07a51d6" rel="me">Gravatar</a></li>
+    </ul>
+</body>
+</html>
 gtag('config', 'G-PASTE-YOUR-MEASUREMENT-ID-HERE');
 </script>
