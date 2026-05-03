@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- 1. Consent Defaults (MUST BE FIRST) -->
+    <!-- 1. Google Consent Mode Defaults (MUST be the absolute first script) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
+      // Set default consent for EEA and UK
       gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
@@ -15,6 +16,7 @@
         'regions': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB']
       });
 
+      // Set default consent for all other regions
       gtag('consent', 'default', {
         'ad_storage': 'granted',
         'ad_user_data': 'granted',
@@ -23,7 +25,7 @@
       });
     </script>
 
-    <!-- 2. Google Tag Manager (Script) -->
+    <!-- 2. Google Tag Manager (Main Script) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -32,23 +34,37 @@
 
     <!-- 3. Cookie-Script Banner -->
     <script type="text/javascript" charset="UTF-8" src="https://cookie-script.com"></script>
-    
-    <!-- 4. Google tag (config only - updated to use GTM) -->
-    <script async src="https://googletagmanager.com"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'GT-NFB7GWFB');
-    </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sinan Bilir | AI & Data Scientist Portfolio</title>
-    <!-- ... [Rest of your meta tags] ... -->
+
+    <meta name="description" content="Sinan Bilir is an AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems." />
+    <meta name="theme-color" content="#081120" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
+    <meta property="og:description" content="AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./og-preview.png" />
+    <meta property="og:site_name" content="Sinan Bilir Portfolio" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
+    <meta name="twitter:description" content="AI and Data Scientist specialising in healthcare AI, deep learning, and MLOps." />
+    <meta name="twitter:image" content="./og-preview.png" />
+
+    <link rel="icon" type="image/png" href="./assets/img/sinan_image.png" />
+
+    <!-- Assets -->
+    <script type="module" crossorigin src="./assets/index-C8GPxC8M.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CcLgcpVG.css" />
   </head>
 
   <body>
-    <!-- 5. Google Tag Manager (noscript) - RIGHT AFTER OPENING BODY -->
-    <noscript><iframe src="https://googletagmanager.com"
+    <!-- 4. Google Tag Manager (noscript) - REQUIRED FOR DETECTION -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCZTWR67"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="root"></div>
