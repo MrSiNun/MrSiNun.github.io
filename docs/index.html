@@ -1,56 +1,39 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-
-// Define dataLayer and the gtag function.
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){dataLayer.push(arguments);}
-
- 
-// IMPORTANT - DO NOT COPY/PASTE WITHOUT MODIFYING REGION LIST
-
-// Set default consent for specific regions according to your requirements
-
-gtag('consent', 'default', {
-
-  'ad_storage': 'denied',
-
-  'ad_user_data': 'denied',
-
-  'ad_personalization': 'denied',
-
-  'analytics_storage': 'denied',
-
- 'regions':[<list of ISO 3166-2 region codes>]
-
-});
-
-// Set default consent for all other regions according to your requirements
-
-gtag('consent', 'default', {
-
-  'ad_storage': 'denied',
-
-  'ad_user_data': 'denied',
-
-  'ad_personalization': 'denied',
-
-  'analytics_storage': 'denied'
-
-});
-
-</script>
-
-<https://cdn.cookie-script.com/s/345cc8972b8fdaa39f37068a20d1271b.js-->
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-NFB7GWFB"></script>
+    <!-- 1. Initialize dataLayer and gtag -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
+      // 2. Set default consent for EEA regions and UK (GDPR compliance)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'regions': [
+          'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 
+          'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 
+          'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB'
+        ]
+      });
+
+      // 3. Set default consent for all other regions (Global)
+      gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    </script>
+
+    <!-- 4. Cookie-Script Banner (Must load before Google Tag) -->
+    <script type="text/javascript" charset="UTF-8" src="https://cookie-script.com"></script>
+    
+    <!-- 5. Google tag (gtag.js) -->
+    <script async src="https://googletagmanager.com"></script>
+    <script>
       gtag('js', new Date());
       gtag('config', 'GT-NFB7GWFB');
     </script>
