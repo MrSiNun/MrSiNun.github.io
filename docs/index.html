@@ -1,93 +1,51 @@
 <!doctype html>
 <html lang="en">
-  <head>
-   <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TCZTWR67');</script>
-  <!-- End Google Tag Manager -->
-    
-    
-    <!-- 1. Google Consent Mode v2 Defaults -->
-    <!-- This must run BEFORE Google Tag Manager to ensure compliance -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      // Default for EEA/UK (Privacy strict)
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500,
-        'regions': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB']
-      });
-
-      // Default for the rest of the world
-      gtag('consent', 'default', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-      });
-    </script>
-
-    <!-- 2. Google Tag Manager (Script) -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TCZTWR67');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCZTWR67"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- 3. Cookie-Script Banner -->
-    <script type="text/javascript" charset="UTF-8" src="https://cookie-script.com"></script>
-
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- 1. CONSENT DEFAULT STATE (Must be absolute first script) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // EEA and UK: Denied by default
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500,
+            'regions': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB']
+        });
+
+        // Other regions: Granted by default
+        gtag('consent', 'default', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+        });
+    </script>
+
+    <!-- 2. GOOGLE TAG MANAGER (GTM) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://googletagmanager.com;
+    })(window,document,'script','dataLayer','GTM-TCZTWR67');</script>
+
+    <!-- 3. COOKIE-SCRIPT BANNER -->
+    <script type="text/javascript" charset="UTF-8" src="https://cookie-script.com"></script>
+
     <title>Sinan Bilir | AI & Data Scientist Portfolio</title>
-
-    <meta
-      name="description"
-      content="Sinan Bilir is an AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems."
-    />
-
-    <meta name="theme-color" content="#081120" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
-    <meta property="og:description" content="AI and Data Scientist specialising in machine learning, healthcare AI, multi-omics integration, deep learning, MLOps, and decision-support systems." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="./og-preview.png" />
-    <meta property="og:site_name" content="Sinan Bilir Portfolio" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sinan Bilir | AI & Data Scientist Portfolio" />
-    <meta name="twitter:description" content="AI and Data Scientist specialising in healthcare AI, deep learning, MLOps, and end-to-end delivery." />
-    <meta name="twitter:image" content="./og-preview.png" />
-
-    <link rel="icon" type="image/png" href="./assets/img/sinan_image.png" />
-
-    <!-- Application Assets -->
-    <script type="module" crossorigin src="./assets/index-C8GPxC8M.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CcLgcpVG.css" />
-  </head>
-
-  <body>
-    <!-- 4. Google Tag Manager (noscript) -->
-    <!-- Required for Google to "detect" the tag on your site -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCZTWR67"
+    <!-- [Include remaining Meta Tags here] -->
+</head>
+<body>
+    <!-- 4. GTM NOSCRIPT (Top of body) -->
+    <noscript><iframe src="https://googletagmanager.com"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
-  </body>
+</body>
 </html>
